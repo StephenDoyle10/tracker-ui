@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "mern-stack-ui",
   "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "compile": "webpack --mode production",
     "#compile": "Generates JS bundles for production. Use with start.",
@@ -14,7 +18,8 @@
     "watch-server-hmr": "webpack -w --config webpack.serverHMR.js",
     "#watch-server-hmr": "Reompile server HMR bundle on changes.",
     "dev-all": "rm dist/* && npm run watch-server-hmr",
-    "#dev-all": "Dev mode: watch for server changes and start UI server"
+    "#dev-all": "Dev mode: watch for server changes and start UI server",
+    "heroku-postbuild": "npm run compile && ln -fs ../node_modules/bootstrap/dist public/bootstrap"
   },
   "author": "",
   "license": "ISC",
